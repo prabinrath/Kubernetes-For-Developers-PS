@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-ang
+spec:
+  replicas: 3
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: demo-ang
+  template:
+    metadata:
+      labels:
+        app: demo-ang
+    spec:
+      containers:
+      - name: demo-ang
+        image: demo-ang:v1
